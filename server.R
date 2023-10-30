@@ -20,6 +20,7 @@ server <- function(input, output) {
          col = input$colors,
          border = "white",
          xlab = "Waiting time to next eruption (in mins)",
+         labels = as.logical(input$labels),
          main = "Histogram of waiting times"
     )
     

@@ -28,10 +28,19 @@ ui <- fluidPage(
                     "Green" = "green"
                   ),
                   selected = "blue"
+      ),
+      
+      # Input: Radio buttons for count display ----
+      radioButtons(inputId = "labels",
+                   label = "Display count",
+                   choices = list(
+                     "False" = FALSE,
+                     "True" = TRUE
+                   ),
+                   selected = FALSE
       )
       
     ),
-    
     # Main panel for displaying outputs ----
     mainPanel(
       
