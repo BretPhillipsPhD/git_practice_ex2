@@ -16,9 +16,12 @@ server <- function(input, output) {
 
     hist(x,
          breaks = bins,
+         # allow input from the bar color dropdown
+         col = input$colors,
+         border = "white",
          xlab = "Waiting time to next eruption (in mins)",
          main = "Histogram of waiting times"
-      )
+    )
 
   })
 
