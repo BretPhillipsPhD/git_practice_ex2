@@ -1,6 +1,6 @@
 # Define server logic required to draw a histogram ----
 server <- function(input, output) {
-
+  
   # Histogram of the Old Faithful Geyser Data ----
   # with requested number of bins
   # This expression that generates a histogram is wrapped in a call
@@ -10,16 +10,19 @@ server <- function(input, output) {
   #    re-executed when inputs (input$bins) change
   # 2. Its output type is a plot
   output$geyserPlot <- renderPlot({
-
+    
     x <- faithful$waiting
     bins <- seq(min(x), max(x), length.out = input$bins + 1)
-
+    
     hist(x,
          breaks = bins,
+         # allow input from the bar color dropdown
+         col = input$colors,
+         border = "white",
          xlab = "Waiting time to next eruption (in mins)",
          main = "Histogram of waiting times"
-      )
-
+    )
+    
   })
-
+  
 }
