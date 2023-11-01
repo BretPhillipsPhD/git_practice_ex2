@@ -1,25 +1,25 @@
 library(shiny)
-library(plotly)
+library(ggplot2)
 
 # Define UI for app that draws a histogram ----
 ui <- fluidPage(
-  
+
   # App title ----
   titlePanel("Hello Shiny!"),
-  
+
   # Sidebar layout with input and output definitions ----
   sidebarLayout(
-    
+
     # Sidebar panel for inputs ----
     sidebarPanel(
-      
+
       # Input: Slider for the number of bins ----
       sliderInput(inputId = "bins",
                   label = "Number of bins:",
                   min = 1,
                   max = 50,
                   value = 30),
-      
+
       # Input: Dropdown for the bar colors ----
       selectInput(inputId = "colors",
                   label = "Bar color:",
@@ -30,7 +30,7 @@ ui <- fluidPage(
                   ),
                   selected = "blue"
       ),
-      
+
       # Input: Radio buttons for count display ----
       radioButtons(inputId = "labels",
                    label = "Display count",
@@ -40,15 +40,15 @@ ui <- fluidPage(
                    ),
                    selected = FALSE
       )
-      
+
     ),
     
     # Main panel for displaying outputs ----
     mainPanel(
-      
+
       # Output: Histogram ----
-      plotlyOutput(outputId = "geyserPlot")
-      
+      plotOutput(outputId = "geyserPlot")
+
     )
   )
 )
