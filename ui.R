@@ -1,4 +1,5 @@
 library(shiny)
+library(plotly)
 
 # Define UI for app that draws a histogram ----
 ui <- fluidPage(
@@ -41,11 +42,12 @@ ui <- fluidPage(
       )
       
     ),
+    
     # Main panel for displaying outputs ----
     mainPanel(
       
       # Output: Histogram ----
-      plotOutput(outputId = "geyserPlot")
+      plotlyOutput(outputId = "geyserPlot")
       
     )
   )
